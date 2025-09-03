@@ -16,7 +16,7 @@
 			/* Full site fade-in effect */
 			body {
 				opacity: 0;
-				transition: opacity 2s ease-in;
+				transition: opacity 1s ease-in;
 			}
 
 			body.loaded {
@@ -428,15 +428,12 @@
 				// Add loaded class to body for full site fade-in
 				body.classList.add('loaded');
 				
-				// After 2 seconds, fade out the loader and fade in the title
+				// After 2 seconds, move loader to top left corner and fade in the title
 				setTimeout(function() {
-					loader.classList.add('fade-out');
+					loader.classList.add('move-to-corner');
 					
-					// Wait for loader fade out to complete, then fade in title
-					setTimeout(function() {
-						loader.style.display = 'none';
-						introTitle.classList.add('fade-in');
-					}, 500); // Match the CSS transition duration
+					// Fade in title immediately when animation starts
+					introTitle.classList.add('fade-in');
 				}, 2000);
 			});
 		</script>
