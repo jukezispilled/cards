@@ -9,16 +9,16 @@
   --color-text: #fff;
   --color-bg: #000;
   --color-link: #fff;
-  --color-link-hover: #c471e1;
+  --color-link-hover: #39ff14; /* Neon green for that pump energy */
   --page-padding: 1.5rem;
-  --color-card-1: #d09df2;
-  --color-card-2: #9df2eb;
-  --color-card-3: #f5e2a4;
-  --color-card-4: #d09df2;
-  --color-card-5: #9dcaf2;
-  --color-card-6: #f29dcc;
-  --color-bg-card: rgba(255, 255, 255, 0.2);
-  --color-bg-card-inner: rgb(41 27 41);
+  --color-card-1: #00ff41; /* Matrix green */
+  --color-card-2: #39ff14; /* Electric lime */
+  --color-card-3: #32cd32; /* Lime green */
+  --color-card-4: #00ff7f; /* Spring green */
+  --color-card-5: #7fff00; /* Chartreuse */
+  --color-card-6: #adff2f; /* Green yellow */
+  --color-bg-card: rgba(0, 255, 65, 0.2); /* Green with transparency */
+  --color-bg-card-inner: rgb(15 41 15); /* Dark green instead of purple */
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   font-family: "Kode Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(../img/noise.png), radial-gradient(circle, rgb(52 33 56) 0%, rgb(0 0 0) 100%);
+  background-image: url(../img/noise.png), radial-gradient(circle, rgb(15 56 15) 0%, rgb(0 0 0) 100%); /* Green gradient instead of purple */
   background-size: 400px, 100% 100vh;
   background-attachment: fixed;
   overflow-x: hidden;
@@ -188,7 +188,7 @@ a:focus-visible {
   position: absolute;
   bottom: 55px;
   right: 0px;
-  background: #8a74c4;
+  background: #2d8a2d; /* Green instead of purple */
   color: #fff;
   width: 280px;
   max-width: calc(100vw - var(--page-padding) * 2);
@@ -298,18 +298,18 @@ main {
   width: 30vw;
   max-width: 255px;
   min-width: 150px;
-  aspect-ratio: 2/3;
+  aspect-ratio: 420/590;
   font-size: 9px;
   text-transform: uppercase;
-  padding: 5px;
+  padding: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-radius: 10px;
+  border-radius: 14px;
   position: relative;
   align-items: stretch;
   outline: 1px solid var(--color-card);
   background: var(--color-bg-card);
-  grid-template-areas: 'card-img card-img' 'card-title card-meta' 'card-subtitle card-subtitle' 'card-desc card-desc';
+  grid-template-areas: 'card-img card-img';
 }
 
 .grid .card {
@@ -346,36 +346,17 @@ main {
 
 .card__img {
   grid-area: card-img;
-  background-size: cover;
+  background-size: contain;
   background-position: 50% 50%;
   aspect-ratio: 1;
   max-width: 100%;
-  border-radius: 6px 6px 0 0;
-}
-
-.card__title {
-  padding: 0.5rem 3px;
-  grid-area: card-title;
-  margin: 0;
+  border-radius: 14px 14px 14px 14px;
 }
 
 .card__meta {
   grid-area: card-meta;
   padding: 0.5rem 3px;
   text-align: right;
-}
-
-.card__subtitle {
-  grid-area: card-subtitle;
-  margin: 0;
-  padding: 0 3px;
-}
-
-.card__description {
-  grid-area: card-desc;
-  margin: 0;
-  border-radius: 0 0 6px 6px;
-  padding: 0 3px;
 }
 
 .card-wrap {
@@ -390,7 +371,7 @@ main {
 
 .card--rel  {
   align-items: start;
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,255,65,0.1); /* Green transparency instead of white */
 }
 
 .card--rel .card__img {
@@ -449,7 +430,7 @@ main {
 
 .content .card {
   grid-area: card;
-  background: rgba(132, 128, 143, 0.36);
+  background: rgba(0, 255, 65, 0.36); /* Green instead of purple */
 }
 
 @media screen and (min-width: 53em) {
