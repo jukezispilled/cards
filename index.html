@@ -12,6 +12,40 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<style>
+			.intro__loader {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -75%);
+				width: 35%;
+				height: 35%;
+				background-image: url(img/pc.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				opacity: 1;
+				transition: opacity 0.5s ease-out;
+				z-index: 10;
+			}
+			
+			.intro__loader.fade-out {
+				opacity: 0;
+			}
+			
+			.intro__title {
+				opacity: 0;
+				transition: opacity 0.5s ease-in;
+			}
+			
+			.intro__title.fade-in {
+				opacity: 1;
+			}
+			
+			.intro {
+				position: relative;
+			}
+		</style>
 		<script>
 			document.documentElement.className = 'js';
 		</script>
@@ -24,7 +58,8 @@
 		</nav>
 		<main>
 			<div class="intro">
-				<h2 class="intro__title">It's Fuckin Finance Fellas</h2>
+				<div class="intro__loader" id="loader"></div>
+				<h2 class="intro__title" id="introTitle">It's Fuckin Finance Fellas</h2>
 				<p class="intro__hint">&nbsp;</p>
 				<div class="grid">
 					<div class="card">
@@ -320,6 +355,9 @@
 					</div>
 				</div>
 			</div>
+			<section class="outro">
+			</section>
+			<p class="credits"><a href="https://twitter.com/codrops">[collect]</a></p>
 		</main>
 		<script src="js/gsap.min.js"></script>
 		<script src="js/ScrollTrigger.min.js"></script>
@@ -331,5 +369,24 @@
 		<script src="js/lenis.js"></script>
 		<script src="js/smoothscroll.js"></script>
 		<script type="module" src="js/index.js"></script>
+		
+		<script>
+			// Image loader functionality
+			window.addEventListener('load', function() {
+				const loader = document.getElementById('loader');
+				const introTitle = document.getElementById('introTitle');
+				
+				// After 2 seconds, fade out the loader and fade in the title
+				setTimeout(function() {
+					loader.classList.add('fade-out');
+					
+					// Wait for loader fade out to complete, then fade in title
+					setTimeout(function() {
+						loader.style.display = 'none';
+						introTitle.classList.add('fade-in');
+					}, 500); // Match the CSS transition duration
+				}, 2000);
+			});
+		</script>
 	</body>
 </html>

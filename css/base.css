@@ -246,6 +246,32 @@ main {
   text-decoration: underline;
 }
 
+/* Navigation Links Styles */
+.nav-links2 {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-links2 a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links2 a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .nav-links {
