@@ -367,7 +367,7 @@ main {
 .card {
   width: 30vw;
   max-width: 255px;
-  min-width: 150px;
+  min-width: 70px;
   aspect-ratio: 420/590;
   font-size: 9px;
   text-transform: uppercase;
