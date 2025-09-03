@@ -86,12 +86,11 @@
 				}
 			}
 
-			/* Ensure intro elements are properly positioned on larger screens */
+			/* Hide intro title and hint on larger screens */
 			@media (min-width: 769px) {
 				.intro__title,
 				.intro__hint {
-					position: relative;
-					z-index: 5;
+					display: none;
 				}
 			}
 		</style>
