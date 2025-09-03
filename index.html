@@ -13,6 +13,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<style>
+			/* Full site fade-in effect */
+			body {
+				opacity: 0;
+				transition: opacity 1s ease-in;
+			}
+
+			body.loaded {
+				opacity: 1;
+			}
+
 			.intro__loader {
 				position: absolute;
 				top: 50%;
@@ -371,10 +381,14 @@
 		<script type="module" src="js/index.js"></script>
 		
 		<script>
-			// Image loader functionality
+			// Image loader functionality with full site fade-in
 			window.addEventListener('load', function() {
 				const loader = document.getElementById('loader');
 				const introTitle = document.getElementById('introTitle');
+				const body = document.body;
+				
+				// Add loaded class to body for full site fade-in
+				body.classList.add('loaded');
 				
 				// After 2 seconds, fade out the loader and fade in the title
 				setTimeout(function() {
