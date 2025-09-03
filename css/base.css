@@ -232,7 +232,7 @@ main {
 
 .intro__title {
   text-transform: uppercase;
-  font-size: clamp(2rem,7vw,8rem);
+  font-size: clamp(2rem, 7vw, 8rem);
   font-weight: 400;
   grid-area: intro-title;
   position: relative;
@@ -240,7 +240,12 @@ main {
   align-self: center;
   margin: 0;
   text-align: center;
+  padding: 0% 30%;
+
+  /* Make text italic */
+  font-style: italic;
 }
+
 
 .intro__hint {
   grid-area: intro-hint;
