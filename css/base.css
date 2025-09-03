@@ -24,11 +24,10 @@
 body {
   margin: 0;
   color: var(--color-text);
-  background-color: var(--color-bg);
-  font-family: "Kode Mono", monospace;
+  background-color: #15161B;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(../img/noise.png), radial-gradient(circle, rgb(15 56 15) 0%, rgb(0 0 0) 100%); /* Green gradient instead of purple */
   background-size: 400px, 100% 100vh;
   background-attachment: fixed;
   overflow-x: hidden;
